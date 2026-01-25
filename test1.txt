@@ -1,10 +1,1 @@
- Volume in drive C has no label.
- Volume Serial Number is 2E33-B455
-
- Directory of C:\Users\Ayush Pratap Singh\Desktop\My Project
-
-24-01-2026  19:57    <DIR>          .
-24-01-2026  19:38    <DIR>          ..
-24-01-2026  19:57                 0 test1.txt
-               1 File(s)              0 bytes
-               2 Dir(s)  404,260,073,472 bytes free
+change1
