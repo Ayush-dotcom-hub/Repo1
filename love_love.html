@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine?</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Comic Sans MS", cursive;
+        text-align: center;
+        background: radial-gradient(circle, #ff9a9e, #fad0c4);
+      }
+
+      .card {
+        width: 90%;
+        max-width: 400px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(255, 77, 109, 0.5);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      button {
+        font-size: 1.3rem;
+        padding: 16px;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        width: 100%;
+        transition: transform 0.1s ease;
+      }
+
+      button:active {
+        transform: scale(0.97);
+      }
+
+      #yes {
+        background: #ff4d6d;
+        color: white;
+      }
+
+      #no {
+        background: #ccc;
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>💖 Will you go out with me?</h1>
+      <p>Tap a button and see what happens! 🍫</p>
+
+      <div class="buttons">
+        <button id="yes">Yes 💘</button>
+        <button id="no">No 😅</button>
+      </div>
+    </div>
+
+    <script>
+      const yesBtn = document.getElementById("yes");
+      const noBtn = document.getElementById("no");
+
+      // YES button works on tap
+      yesBtn.addEventListener("click", () => {
+        document.body.innerHTML = `
+        <h1 style="padding:40px;">🥰 Yay! I can't wait for our Valentine date! 💖</h1>
+      `;
+        // Optional: vibrate phone
+        if (navigator.vibrate) navigator.vibrate(150);
+      });
+
+      // NO button moves when touched
+      function moveNoButton() {
+        noBtn.style.position = "fixed"; // make it float
+        noBtn.style.left = Math.random() * 65 + "vw";
+        noBtn.style.top = Math.random() * 65 + "vh";
+      }
+
+      // Mobile + desktop support
+      noBtn.addEventListener("touchstart", moveNoButton); // mobile touch
+      noBtn.addEventListener("mouseenter", moveNoButton); // desktop hover
+    </script>
+  </body>
+</html>
